@@ -1,0 +1,859 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >hock (v1.3.2)</a>
+</h1>
+<h4>A mocking server for HTTP requests</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hock">module hock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.hock">
+            function <span class="apidocSignatureSpan"></span>hock
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.createHock">
+            function <span class="apidocSignatureSpan">hock.</span>createHock
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request">
+            function <span class="apidocSignatureSpan">hock.</span>request
+            <span class="apidocSignatureSpan">(parent, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hock.</span>request.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hock.createHock">module hock.createHock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.createHock.createHock">
+            function <span class="apidocSignatureSpan">hock.</span>createHock
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hock.request">module hock.request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.request">
+            function <span class="apidocSignatureSpan">hock.</span>request
+            <span class="apidocSignatureSpan">(parent, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hock.request.prototype">module hock.request.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.any">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>any
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.isDone">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>isDone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.isMatch">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>isMatch
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.many">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>many
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.max">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>max
+            <span class="apidocSignatureSpan">(number)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.min">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>min
+            <span class="apidocSignatureSpan">(number)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.once">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>once
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.reply">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>reply
+            <span class="apidocSignatureSpan">(statusCode, body, headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.replyWithFile">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>replyWithFile
+            <span class="apidocSignatureSpan">(statusCode, filePath, headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.sendResponse">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>sendResponse
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.shouldPrune">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>shouldPrune
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.toJSON">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hock.request.prototype.twice">
+            function <span class="apidocSignatureSpan">hock.request.prototype.</span>twice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hock" id="apidoc.module.hock">module hock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hock.hock" id="apidoc.element.hock.hock">
+        function <span class="apidocSignatureSpan"></span>hock
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hock = function (options) {
+  return new Hock(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.createHock" id="apidoc.element.hock.createHock">
+        function <span class="apidocSignatureSpan">hock.</span>createHock
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createHock = function (options) {
+  return new Hock(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```Javascript
+
+var http = require(&#x27;http&#x27;),
+    hock = require(&#x27;hock&#x27;),
+    request = require(&#x27;request&#x27;);
+
+var mock = hock.<span class="apidocCodeKeywordSpan">createHock</span>();
+mock
+    .get(&#x27;/some/url&#x27;)
+    .reply(200, &#x27;Hello!&#x27;);
+
+var server = http.createServer(mock.handler);
+server.listen(1337, function () {
+    request(&#x27;http://localhost:&#x27; + 1337 + &#x27;/some/url&#x27;, function(err, res, body) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request" id="apidoc.element.hock.request">
+        function <span class="apidocSignatureSpan">hock.</span>request
+        <span class="apidocSignatureSpan">(parent, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (parent, options) {
+  var self = this;
+
+  this.method = options.method || &#x27;GET&#x27;;
+  this.url = options.url;
+  this.body = options.body || &#x27;&#x27;;
+  this.headers = options.headers || {};
+
+  if (typeof options.body === &#x27;object&#x27;) {
+    this.body = JSON.stringify(options.body);
+  }
+
+  Object.keys(this.headers).forEach(function (key) {
+    self.headers[key.toLowerCase()] = self.headers[key];
+    if (key.toLowerCase() !== key) {
+      delete self.headers[key];
+    }
+  });
+
+  this._defaultReplyHeaders = {};
+
+  this._parent = parent;
+  this._minRequests = 1;
+  this._maxRequests = 1;
+  this._count = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hock.createHock" id="apidoc.module.hock.createHock">module hock.createHock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hock.createHock.createHock" id="apidoc.element.hock.createHock.createHock">
+        function <span class="apidocSignatureSpan">hock.</span>createHock
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createHock = function (options) {
+  return new Hock(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```Javascript
+
+var http = require(&#x27;http&#x27;),
+    hock = require(&#x27;hock&#x27;),
+    request = require(&#x27;request&#x27;);
+
+var mock = hock.<span class="apidocCodeKeywordSpan">createHock</span>();
+mock
+    .get(&#x27;/some/url&#x27;)
+    .reply(200, &#x27;Hello!&#x27;);
+
+var server = http.createServer(mock.handler);
+server.listen(1337, function () {
+    request(&#x27;http://localhost:&#x27; + 1337 + &#x27;/some/url&#x27;, function(err, res, body) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hock.request" id="apidoc.module.hock.request">module hock.request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.request" id="apidoc.element.hock.request.request">
+        function <span class="apidocSignatureSpan">hock.</span>request
+        <span class="apidocSignatureSpan">(parent, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (parent, options) {
+  var self = this;
+
+  this.method = options.method || &#x27;GET&#x27;;
+  this.url = options.url;
+  this.body = options.body || &#x27;&#x27;;
+  this.headers = options.headers || {};
+
+  if (typeof options.body === &#x27;object&#x27;) {
+    this.body = JSON.stringify(options.body);
+  }
+
+  Object.keys(this.headers).forEach(function (key) {
+    self.headers[key.toLowerCase()] = self.headers[key];
+    if (key.toLowerCase() !== key) {
+      delete self.headers[key];
+    }
+  });
+
+  this._defaultReplyHeaders = {};
+
+  this._parent = parent;
+  this._minRequests = 1;
+  this._maxRequests = 1;
+  this._count = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hock.request.prototype" id="apidoc.module.hock.request.prototype">module hock.request.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.any" id="apidoc.element.hock.request.prototype.any">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>any
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">any = function () {
+  return this.many({ min: 0, max: Infinity });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    hockServer.put(&#x27;/path/one&#x27;, {
+        foo: 1,
+        bar: {
+            baz: true
+            biz: &#x27;asdf1234&#x27;
+        }
+    })
+    .<span class="apidocCodeKeywordSpan">any</span>() // equivalent to min(0), max(Infinity)
+    .reply(202, {
+        status: &#x27;OK&#x27;
+    })
+```
+### hockServer.done() with many
+
+`hockServer.done()` will verify the number of requests fits within the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.isDone" id="apidoc.element.hock.request.prototype.isDone">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>isDone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDone = function () {
+  return !(this._count &#x3e;= this._minRequests &#x26;&#x26; this._count &#x3c;= this._maxRequests);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    url: this.url,
+    body: this.body,
+    headers: this.headers,
+    stats: {
+      count: this._count,
+      min: this._minRequests,
+      max: this._maxRequests,
+      isDone: this.<span class="apidocCodeKeywordSpan">isDone</span>(),
+      shouldPrune: this.shouldPrune()
+    }
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.isMatch" id="apidoc.element.hock.request.prototype.isMatch">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>isMatch
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isMatch = function (request) {
+  var self = this;
+
+  if (this._parent._pathFilter) {
+    request.url = this._parent._pathFilter(request.url);
+  }
+
+  if (request.method === &#x27;GET&#x27; || request.method === &#x27;DELETE&#x27;) {
+    return this.method === request.method &#x26;&#x26; request.url === this.url &#x26;&#x26; checkHeaders();
+  }
+  else {
+    var body = request.body;
+    if (this._requestFilter) {
+      body = this._requestFilter(request.body);
+    }
+
+    return this.method === request.method &#x26;&#x26; this.url === request.url &#x26;&#x26;
+      this.body === body &#x26;&#x26; checkHeaders();
+
+  }
+
+  function checkHeaders() {
+    var match = true;
+    Object.keys(self.headers).forEach(function (key) {
+      if (self.headers[key] &#x26;&#x26; self.headers[key] !== request.headers[key]) {
+        match = false;
+      }
+    });
+
+    return match;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.many" id="apidoc.element.hock.request.prototype.many">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>many
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">many = function (options) {
+  options = options || {
+    min: 1,
+    max: Infinity
+  };
+
+  if (typeof options.min === &#x27;number&#x27;) {
+    this._minRequests = options.min;
+    if (this._minRequests &#x3e; this._maxRequests) {
+      this._maxRequests = this._minRequests;
+    }
+  }
+
+  if (typeof options.max === &#x27;number&#x27;) {
+    this._maxRequests = options.max;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    hockServer.put(&#x27;/path/one&#x27;, {
+        foo: 1,
+        bar: {
+            baz: true
+            biz: &#x27;asdf1234&#x27;
+        }
+    })
+    .<span class="apidocCodeKeywordSpan">many</span>() // min 1, max Unlimited
+    .reply(202, {
+        status: &#x27;OK&#x27;
+    })
+```
+
+Provide custom min and max options to `many`:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.max" id="apidoc.element.hock.request.prototype.max">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>max
+        <span class="apidocSignatureSpan">(number)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">max = function (number) {
+  return this.many({ max: number });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        foo: 1,
+        bar: {
+            baz: true
+            biz: &#x27;asdf1234&#x27;
+        }
+    })
+    .min(4)
+    .<span class="apidocCodeKeywordSpan">max</span>(10)
+    .reply(202, {
+        status: &#x27;OK&#x27;
+    })
+```
+
+Call `many` if you need to handle at least one, possibly
+many requests:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.min" id="apidoc.element.hock.request.prototype.min">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>min
+        <span class="apidocSignatureSpan">(number)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">min = function (number) {
+  return this.many({ min: number });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    hockServer.put(&#x27;/path/one&#x27;, {
+        foo: 1,
+        bar: {
+            baz: true
+            biz: &#x27;asdf1234&#x27;
+        }
+    })
+    .<span class="apidocCodeKeywordSpan">min</span>(4)
+    .max(10)
+    .reply(202, {
+        status: &#x27;OK&#x27;
+    })
+```
+
+Call `many` if you need to handle at least one, possibly
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.once" id="apidoc.element.hock.request.prototype.once">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>once
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function () {
+  return this.many({ min: 1, max: 1 });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.reply" id="apidoc.element.hock.request.prototype.reply">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>reply
+        <span class="apidocSignatureSpan">(statusCode, body, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reply = function (statusCode, body, headers) {
+  this.response = {
+    statusCode: statusCode || 200,
+    body: body || &#x27;&#x27;,
+    headers: headers
+  };
+
+  this._parent.enqueue(this);
+
+  return this._parent;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var http = require(&#x27;http&#x27;),
+    hock = require(&#x27;hock&#x27;),
+    request = require(&#x27;request&#x27;);
+
+var mock = hock.createHock();
+mock
+    .get(&#x27;/some/url&#x27;)
+    .<span class="apidocCodeKeywordSpan">reply</span>(200, &#x27;Hello!&#x27;);
+
+var server = http.createServer(mock.handler);
+server.listen(1337, function () {
+    request(&#x27;http://localhost:&#x27; + 1337 + &#x27;/some/url&#x27;, function(err, res, body) {
+       console.log(body);
+    });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.replyWithFile" id="apidoc.element.hock.request.prototype.replyWithFile">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>replyWithFile
+        <span class="apidocSignatureSpan">(statusCode, filePath, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replyWithFile = function (statusCode, filePath, headers) {
+  this.response = {
+    statusCode: statusCode || 200,
+    body: fs.createReadStream(filePath),
+    headers: headers
+  };
+
+  this._parent.enqueue(this);
+
+  return this._parent;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```Javascript
+// returns the current hockServer instance
+req.reply(statusCode, body, responseHeaders);
+```
+
+```Javascript
+// returns the current hockServer instance
+req.<span class="apidocCodeKeywordSpan">replyWithFile</span>(statusCode, filePath, responseHeaders);
+```
+
+You can optionally send a ReadableStream with reply, for example testing with large responses without having to use a file on disk
+:
+
+```Javascript
+// returns the current hockServer instance
+req.reply(statusCode, new RandomStream(10000), responseHeaders);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.sendResponse" id="apidoc.element.hock.request.prototype.sendResponse">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>sendResponse
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendResponse = function (response) {
+  var self = this;
+
+  this._count++;
+
+  var headers = this.response.headers || this._defaultReplyHeaders;
+
+  response.writeHead(this.response.statusCode, headers);
+
+  if (isStream(this.response.body)) {
+    var readStream = this.response.body;
+
+    if (this._maxRequests &#x3e; 1) {
+      // Because we need to respond with this body more than once, if it is a stream,
+      // we make a buffer copy and use that as the body for future responses.
+      var data = [];
+
+      readStream.on(&#x27;readable&#x27;, function () {
+        var chunk;
+        while (null !== (chunk = readStream.read())) {
+          data.push(chunk);
+          response.write(chunk);
+        }
+      });
+      readStream.on(&#x27;end&#x27;, function(){
+        self.response.body = Buffer.concat(data);
+        response.end();
+      });
+    }
+    else {
+      readStream.pipe(response);
+    }
+  }
+  else if ((typeof this.response.body === &#x27;object&#x27;) &#x26;&#x26; !Buffer.isBuffer(this.response.body)) {
+    response.end(JSON.stringify(this.response.body));
+  }
+  else {
+    response.end(this.response.body);
+  }
+
+  return this.shouldPrune();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.shouldPrune" id="apidoc.element.hock.request.prototype.shouldPrune">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>shouldPrune
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shouldPrune = function () {
+  return this._count &#x3e;= this._maxRequests;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ else if ((typeof this.response.body === &#x27;object&#x27;) &#x26;&#x26; !Buffer.isBuffer(this.response.body)) {
+   response.end(JSON.stringify(this.response.body));
+ }
+ else {
+   response.end(this.response.body);
+ }
+
+ return this.<span class="apidocCodeKeywordSpan">shouldPrune</span>();
+};
+
+/**
+* Request.isDone
+*
+* @description Identify if the current request has met its min and max requirements
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.toJSON" id="apidoc.element.hock.request.prototype.toJSON">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return {
+    method: this.method,
+    url: this.url,
+    body: this.body,
+    headers: this.headers,
+    stats: {
+      count: this._count,
+      min: this._minRequests,
+      max: this._maxRequests,
+      isDone: this.isDone(),
+      shouldPrune: this.shouldPrune()
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hock.request.prototype.twice" id="apidoc.element.hock.request.prototype.twice">
+        function <span class="apidocSignatureSpan">hock.request.prototype.</span>twice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">twice = function () {
+  return this.many({ min: 1, max: 2 });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
